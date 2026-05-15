@@ -1,0 +1,5 @@
+pyinstaller --onedir --name "首饰管理系统-管理员-v1.2.0" ^
+    --add-data "Jewelry_images;Jewelry_images" ^
+    --add-data "resources;resources" ^
+    --add-data "Jewelry_Management_System.db;." ^
+    Jewelry_Management_System.py
