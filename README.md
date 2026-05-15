@@ -74,6 +74,18 @@ cd JewelryManagementSystem
 
 pip install -r requirements.txt
 
+\# 3. 设置百度OCR识别秘钥
+在AdminWindows中open_baidu_ocr用法中设置：
+    def open_baidu_ocr(self):
+        try:
+            dialog = BaiduOCRDialog(self.db, self, api_key="你的真实API_Key",#这里要添加你的真实API_Key
+                                   secret_key="秘钥")
+            dialog.exec_()
+        except Exception as e:
+            QMessageBox.critical(self, "功能暂时不可用", f"匹配模块加载失败，已禁用。\n错误: {e}")
+            self.btn_match_image.setEnabled(False)
+            self.btn_match_image.setText("📷 匹配(已禁用)")
+
 
 
 \# 3. 运行程序
